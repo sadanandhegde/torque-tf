@@ -4,7 +4,7 @@ variable "aws_region" {
 }
 
 resource "random_pet" "rand_num" {
-    length = 300
+    length = 5
 }
 
 resource "aws_s3_bucket" "bucket" {
