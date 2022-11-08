@@ -3,8 +3,12 @@ variable "aws_region" {
     default = "us-west-2"
 }
 
+resource "random_pet" "rand_num" {
+    length = 300
+}
+
 resource "aws_s3_bucket" "bucket" {
-    bucket = "my-bucket-test-1995"
+    bucket = "my-bucket-test-${random_pet.rand_num.id}"
     force_destroy = true  
     acl = "public-read-write"
 
