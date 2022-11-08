@@ -10,7 +10,7 @@ resource "random_pet" "rand_num" {
 resource "aws_s3_bucket" "bucket" {
     bucket = "my-bucket-test-${random_pet.rand_num.id}"
     force_destroy = true  
-    acl = "public-read-write"
+    acl = "private"
 
     tags = {
     Name        = "My bucket"
