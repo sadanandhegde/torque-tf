@@ -8,7 +8,8 @@ resource "random_pet" "rand_num" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-    bucket = "my-bucket-test-${random_pet.rand_num.id}"
+    # bucket = "my-bucket-test-${random_pet.rand_num.id}"
+    bucket = "my-bucket-test-${formatdate("YYYYMMDDhhmmss", timestamp())}"
     force_destroy = true  
     acl = "private"
 
